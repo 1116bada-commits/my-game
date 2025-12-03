@@ -30,9 +30,11 @@ function update() {
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  // Player
   ctx.fillStyle = "#0f0";
   ctx.fillRect(player.x, player.y, player.w, player.h);
 
+  // Blocks
   ctx.fillStyle = "#f33";
   blocks.forEach((b) => {
     b.y += b.speed;
@@ -40,7 +42,7 @@ function update() {
 
     if (collide(player, b)) {
       gameOver = true;
-      alert("GAME OVER");
+      alert("GAME OVER!");
     }
   });
 
